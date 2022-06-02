@@ -6,7 +6,7 @@ import { styletron } from '/home/aleksandra/projects/movie/styletron.js'
 function MyApp({ Component, pageProps }) {
   return (
     <StyletronProvider value={styletron}>
-      {/*<Header/>*/}
+      <Header/>
       <Component {...pageProps} />
     </StyletronProvider>
   );

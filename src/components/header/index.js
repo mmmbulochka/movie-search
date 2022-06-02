@@ -9,8 +9,12 @@ import { StyledLink } from "baseui/link";
 import { Button } from "baseui/button";
 import style from "./index.module.css";
 import {Input} from "baseui/input";
+import {getMovie} from "../../connections/movies";
+import {useState} from "react";
 
 function Header() {
+  const [query, setQuery] = useState()
+
   return (
     <HeaderNavigation>
       <StyledNavigationList $align={ALIGN.left}>
@@ -31,8 +35,8 @@ function Header() {
       </StyledNavigationList>
       <StyledNavigationList $align={ALIGN.right}>
         <StyledNavigationItem style={{display: 'flex', paddingRight: '24px', paddingLeft: 0}}>
-          <Input/>
-          <Button>Search</Button>
+          <Input onChange={(e) => {setQuery(e.target.value)}}/>
+          <Button onClick={() => {console.log(query)}}>Search</Button>
         </StyledNavigationItem>
       </StyledNavigationList>
     </HeaderNavigation>
